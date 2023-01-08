@@ -6,6 +6,11 @@ body {
     height: 100%;
     width: 100%;
     margin: 0;
+
+    font-family: 'Exo';
+    font-weight: 300;
+    font-size: 20px;
+    color: rgb(191, 191, 191);
 }
 
 .container {
@@ -32,7 +37,32 @@ p {
     margin: 5px 0 5px;
 }
 
+p1 {
+    font-family: 'Exo';
+    font-weight: 400;
+    font-size: 26px;
+    color: rgb(190, 189, 189);
+    margin: 5px 0 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(190, 189, 189);
+}
+
+a:link {
+    color: rgb(190, 189, 189);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .content {
+    min-height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,18 +70,21 @@ p {
     gap: 60px;
 }
 
-.card {
+.me-layout 
+{
     position: absolute;
     display: grid;
+}
+
+.card {
     background-color: rgb(34, 34, 34);
     box-shadow: 15px 15px 30px rgb(21, 21, 21);
     padding: 20px;
     border-radius: 25px;
     margin: 0 10px 0;
-    z-index: 1;
 }
 
-.profile {
+.avatar {
     position: absolute;
     z-index: 2;
     border-radius: 25px;
@@ -64,10 +97,6 @@ p {
 .about-me {
     margin-left: 10px;
     grid-area: about-me;
-    font-family: 'Exo';
-    font-weight: 300;
-    font-size: 20px;
-    color: rgb(191, 191, 191);
 }
 
 .links {
@@ -90,16 +119,22 @@ svg:hover {
     transform: scale(1.1);
 }
 
+.footer-link {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
 @media only screen and (min-width: 981px) {
 
-    .profile {
+    .avatar {
         top: -50px;
         left: -50px;
         width: 250px;
         height: 250px;
     }
 
-    .card {
+    .me-layout {
         max-width: 800px;
         min-width: 300px;
 
@@ -118,8 +153,21 @@ svg:hover {
 }
 
 @media only screen and (max-width: 980px) {
-    p { font-size: 20px; }
-    .profile {
+
+    body {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 24px;
+    }
+
+    p1 {
+        font-size: 20px;
+    }
+
+
+    .avatar {
         z-index: 1;
         width: 180px;
         height: 180px;
@@ -127,19 +175,15 @@ svg:hover {
         justify-self: center;
     }
 
-    .about-me {
-        font-size: 15px;
-    }
-
-    .card {
+    .me-layout {
         justify-content: center;
-        min-height: 300px;
-        grid-auto-columns: 1fr; 
-        grid-template-rows: 2.2fr 0.6fr; 
-        gap: 0px 0px; 
-        grid-template-areas: 
-          "about-me"
-          "links"; 
+        min-height: 200px;
+        grid-auto-columns: 1fr;
+        grid-template-rows: 2.2fr 0.6fr;
+        gap: 0px 0px;
+        grid-template-areas:
+            "about-me"
+            "links";
         align-content: space-evenly;
     }
 }
