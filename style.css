@@ -1,0 +1,145 @@
+body {
+    background-color: rgb(30, 30, 30);
+    background-image: radial-gradient(rgba(141, 153, 174, 0.4) 1px, rgba(14, 135, 163, 0) 0px);
+    background-size: 25px 25px;
+
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.head {
+    min-height: 100px;
+    background: linear-gradient(rgb(30, 30, 30), rgba(30, 30, 30, 0));
+}
+
+.foot {
+    min-height: 100px;
+    background: linear-gradient(rgba(30, 30, 30, 0), rgb(30, 30, 30));
+}
+
+p {
+    font-family: 'Exo';
+    font-weight: 500;
+    font-size: 32px;
+    color: rgb(191, 191, 191);
+    margin: 5px 0 5px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.card {
+    position: absolute;
+    display: grid;
+    background-color: rgb(34, 34, 34);
+    box-shadow: 15px 15px 30px rgb(21, 21, 21);
+    padding: 20px;
+    border-radius: 25px;
+    margin: 0 10px 0;
+    z-index: 1;
+}
+
+.profile {
+    position: absolute;
+    z-index: 2;
+    border-radius: 25px;
+    background-image: url("./images/me.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-shadow: 15px 15px 30px rgb(22, 22, 22);
+}
+
+.about-me {
+    margin-left: 10px;
+    grid-area: about-me;
+    font-family: 'Exo';
+    font-weight: 300;
+    font-size: 20px;
+    color: rgb(191, 191, 191);
+}
+
+.links {
+    grid-area: links;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+svg {
+    width: 35px;
+    height: auto;
+    transition: all .2s ease-in-out;
+}
+
+svg:hover {
+    transform: scale(1.1);
+}
+
+@media only screen and (min-width: 981px) {
+
+    .profile {
+        top: -50px;
+        left: -50px;
+        width: 250px;
+        height: 250px;
+    }
+
+    .card {
+        max-width: 800px;
+        min-width: 300px;
+
+        min-height: 300px;
+        max-height: 600px;
+
+        grid-auto-columns: 1fr;
+        grid-template-columns: 0.5fr 1.5fr;
+        grid-template-rows: 1.3fr 0.7fr;
+        gap: 0px 0px;
+        grid-template-areas:
+            ". about-me"
+            "links about-me";
+        align-content: space-evenly;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    p { font-size: 20px; }
+    .profile {
+        z-index: 1;
+        width: 180px;
+        height: 180px;
+        top: -170px;
+        justify-self: center;
+    }
+
+    .about-me {
+        font-size: 15px;
+    }
+
+    .card {
+        justify-content: center;
+        min-height: 300px;
+        grid-auto-columns: 1fr; 
+        grid-template-rows: 2.2fr 0.6fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+          "about-me"
+          "links"; 
+        align-content: space-evenly;
+    }
+}
