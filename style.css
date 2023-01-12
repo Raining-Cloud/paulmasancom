@@ -47,6 +47,7 @@ p1 {
 
 a {
     text-decoration: none;
+    font-weight: 400;
 }
 
 a:visited {
@@ -94,6 +95,14 @@ a:hover {
     box-shadow: 15px 15px 30px rgb(22, 22, 22);
 }
 
+.interests {
+    background-color: rgb(46, 46, 46);
+    position: absolute;
+    z-index: 2;
+    border-radius: 25px;
+    box-shadow: 15px 15px 30px rgb(22, 22, 22);
+}
+
 .about-me {
     margin-left: 10px;
     grid-area: about-me;
@@ -130,6 +139,13 @@ svg:hover {
     .avatar {
         top: -50px;
         left: -50px;
+        width: 250px;
+        height: 250px;
+    }
+
+    .interests {
+        top: 80%;
+        left: 90%;
         width: 250px;
         height: 250px;
     }
